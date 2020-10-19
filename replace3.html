@@ -1,0 +1,22 @@
+<script>
+
+let userGivenString = prompt('tell me something');
+let charactersToReplace = prompt('what to replace from a string?');
+
+function truncate(original, toDelete) {
+let stringToReturn = original;
+  for (let a = toDelete.length - 1; a >= 0; a--) {
+	for (let b = original.length - 1; b >= 0; b--) {
+	  if (original[b] === toDelete[a]) {
+		   stringToReturn = stringToReturn.substring(0, b) + stringToReturn.substring(b + 1, stringToReturn.length);   
+          } else {
+           continue;
+      }
+	}
+  }
+alert(stringToReturn);
+}
+
+truncate(userGivenString, charactersToReplace);
+
+</script>
