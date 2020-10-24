@@ -1,0 +1,26 @@
+<script>
+
+let wordToReplace = `<denied>`; // change variable name
+let originalString = prompt('give me something to work with');
+let whatToReplace = prompt('give me substring to remove');
+
+function replace (userGivenString, subToReplace, replacer) {
+    let startOfReplace = userGivenString.indexOf(subToReplace);
+    let endOfReplace = startOfReplace + subToReplace.length - 1;
+    let replacedString = ""; // change var name to result
+    
+    for (let a = 0; a < userGivenString.length; a++) {
+        if (a === startOfReplace) {
+            replacedString += replacer;
+        } else if (a >= startOfReplace && a <= endOfReplace) {
+            continue;
+        } else {
+            replacedString += userGivenString[a];
+        }
+    }
+
+    return replacedString;
+}
+console.log(replace(originalString, whatToReplace, wordToReplace));
+
+</script>
