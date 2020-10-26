@@ -4,18 +4,18 @@ let wordDenied = `<denied>`;
 let originalString = prompt('give me something to work with');
 let whatToReplace = prompt('give me substring to remove');
 
-function replace (userGivenString, subToReplace, replacer) {
-    let startOfReplace = userGivenString.indexOf(subToReplace);
+function replace (stringGivenByUser, subToReplace, replacer) {
+    let startOfReplace = stringGivenByUser.indexOf(subToReplace);
     let endOfReplace = startOfReplace + subToReplace.length - 1;
     let result = "";
     
-    for (let a = 0; a < userGivenString.length; a++) {
+    for (let a = 0; a < stringGivenByUser.length; a++) {
         if (a === startOfReplace) {
             result += replacer;
         } else if (a >= startOfReplace && a <= endOfReplace) {
             continue;
         } else {
-            result += userGivenString[a];
+            result += stringGivenByUser[a];
         }
     }
 
